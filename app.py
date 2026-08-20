@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Adiciona o diretório 'src' ao path do Python para encontrar o pacote 'agente_suporte'
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "src")))
+
 import streamlit as st
 from agente_suporte.agente import criar_agente_suporte
 
