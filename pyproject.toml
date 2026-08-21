@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.scripts]
-agente-suporte = "agente_suporte:main"
+agente-suporte = "agente_suporte.main:main"
 
 [build-system]
 requires = ["uv_build>=0.12.3,<0.13.0"]

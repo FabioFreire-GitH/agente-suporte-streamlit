@@ -159,8 +159,11 @@ if pergunta:
     # Chama o agente e exibe a resposta
     with st.chat_message("assistant"):
         with st.spinner("Consultando a documentação..."):
-            resposta = agente.run(pergunta)
-            texto_resposta = resposta.content
+            try:
+                resposta = agente.run(pergunta)
+                texto_resposta = resposta.content
+            except Exception as e:
+                texto_resposta = f"Erro ao consultar o agente: {e}"
 
         st.markdown(texto_resposta)
 

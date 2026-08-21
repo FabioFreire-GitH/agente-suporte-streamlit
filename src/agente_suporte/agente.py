@@ -1,6 +1,7 @@
 import os
 import shutil 
 from dotenv import load_dotenv
+import pathlib
 
 from agno.agent import Agent
 from agno.models.google import Gemini
@@ -18,9 +19,11 @@ def criar_agente_suporte(nome_sistema: str, urls_documentacao: list, recriar_ban
     Cria um agente isolado para um sistema específico.
     Se recriar_banco for True, ele apaga a pasta física do banco e baixa tudo do zero.
     """
-    
-    caminho_sqlite = f"tmp/chat_{nome_sistema}.db"
-    caminho_chroma = f"tmp/chroma_{nome_sistema}"
+
+    BASE_DIR = pathlib.Path(__file__).parent.parent.parent
+
+    caminho_sqlite = str(BASE_DIR / "tmp" / f"chat_{nome_sistema}.db")
+    caminho_chroma = str(BASE_DIR / "tmp" / f"chroma_{nome_sistema}")
     nome_colecao = f"docs_{nome_sistema}"
 
     # 1. Limpeza Física Brutal (Se solicitado)

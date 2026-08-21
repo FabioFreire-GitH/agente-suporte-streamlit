@@ -30,7 +30,7 @@ def main():
     # 3. Cria (ou carrega) o agente do Moub
     agente_moub = criar_agente_suporte(nome_sistema="moub", urls_documentacao=urls_moub, recriar_banco=False)  # Mude para True para recriar o banco do zero
     
-    agente_bluve = criar_agente_suporte(nome_sistema="bluve", urls_documentacao=urls_bluve, recriar_banco=True)  # Defina como True para recriar o banco
+    agente_bluve = criar_agente_suporte(nome_sistema="bluve", urls_documentacao=urls_bluve, recriar_banco=False)  # Defina como True para recriar o banco
 
     # 4. Bateria de Testes
     print("\n==============================")
@@ -39,11 +39,11 @@ def main():
     
     agente_moub.print_response("O que são Convênios no sistema MOUB e como eles funcionam?")
     agente_moub.print_response("O que são Usuários no sistema MOUB e como eles funcionam?")
-    agente_moub.print_response("Em adminstradores, quais as permissões de acesso?")
+    agente_moub.print_response("Em administradores, quais as permissões de acesso?")
 
     agente_bluve.print_response("O que são Lojas no sistema BLUVE e como elas funcionam?")
     agente_bluve.print_response("O que são Usuários no sistema BLUVE e como eles funcionam?")
-    agente_bluve.print_response("Em adminstradores, quais as permissões de acesso?")
+    agente_bluve.print_response("Em administradores, quais as permissões de acesso?")
 
 if __name__ == "__main__":
     main()
